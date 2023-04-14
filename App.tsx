@@ -1,51 +1,91 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
+  TouchableHighlight,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Navigation} from 'react-native-navigation';
+import {SimpleAccordion} from 'react-native-simple-accordion';
+import {poemList} from './content/allPoems';
+import Link from './Link';
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+function App({componentId = ''}): JSX.Element {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
+    <SafeAreaView>
+      <StatusBar barStyle={'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}></ScrollView>
+        style={{padding: 25, marginBottom: 25}}>
+        <View style={{marginBottom: 25}}>
+          <Image
+            source={require('./assets/our-virtue.png')}
+            style={styles.icon}
+          />
+          <Text style={styles.headline}>Our Virtue</Text>
+          <Text style={styles.subHeadline}>An Introduction to God</Text>
+        </View>
+        <View style={{paddingBottom: 50}}>
+          {poemList.map(chapter => {
+            return (
+              <SimpleAccordion
+                key={chapter.title}
+                title={chapter.title}
+                viewInside={
+                  <View>
+                    {chapter.items.map(poem => {
+                      return (
+                        <Link
+                          key={poem.path}
+                          componentId={componentId}
+                          to={'Poem'}
+                          style={styles.poemLink}
+                          text={poem.title}
+                          data={poem}
+                        />
+                      );
+                    })}
+                  </View>
+                }
+                bannerStyle={styles.bannerStyle}
+                viewContainerStyle={styles.viewContainerStyle}
+              />
+            );
+          })}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  icon: {
+    width: 100,
+    height: 100,
+    marginBottom: 15,
+  },
+  headline: {
+    fontSize: 48,
+    fontWeight: '600',
+    marginBottom: 5,
+  },
+  subHeadline: {
+    fontSize: 28,
+    fontWeight: '300',
+  },
+  bannerStyle: {backgroundColor: '#F7F7F7'},
+  viewContainerStyle: {shadowColor: 'white'},
+  poemLink: {
+    fontSize: 18,
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+});
 
 // App.options = {
 //   topBar: {
