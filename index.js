@@ -10,8 +10,19 @@
 
 import {Navigation} from 'react-native-navigation';
 import App from './App';
+import Poem from './Poem';
 
-Navigation.registerComponent('com.myApp.WelcomeScreen', () => App);
+Navigation.registerComponent('Welcome', () => App);
+Navigation.registerComponent('Poem', () => Poem);
+
+Navigation.setDefaultOptions({
+  //   statusBar: {
+  //     backgroundColor: '#4d089a',
+  //   },
+  topBar: {
+    visible: false,
+  },
+});
 
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
@@ -20,7 +31,7 @@ Navigation.events().registerAppLaunchedListener(() => {
         children: [
           {
             component: {
-              name: 'com.myApp.WelcomeScreen',
+              name: 'Welcome',
             },
           },
         ],

@@ -47,4 +47,10 @@ function App(): JSX.Element {
 
 const styles = StyleSheet.create({});
 
+// App.options = {
+//   topBar: {
+//     visible: false,
+//   },
+// };
+
 export default App;
