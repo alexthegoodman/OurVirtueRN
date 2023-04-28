@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   Image,
   SafeAreaView,
@@ -14,8 +14,13 @@ import {Navigation} from 'react-native-navigation';
 import {SimpleAccordion} from 'react-native-simple-accordion';
 import {poemList} from './content/allPoems';
 import Link from './Link';
+import RNBootSplash from 'react-native-bootsplash';
 
 function App({componentId = ''}): JSX.Element {
+  useEffect(() => {
+    RNBootSplash.hide();
+  }, []);
+
   return (
     <SafeAreaView>
       <StatusBar barStyle={'dark-content'} />
