@@ -23,7 +23,7 @@ function App({componentId = ''}): JSX.Element {
 
   return (
     <SafeAreaView>
-      <StatusBar barStyle={'dark-content'} />
+      <StatusBar backgroundColor={"white"} barStyle={'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={{padding: 25, marginBottom: 25}}>
