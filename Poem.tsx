@@ -45,11 +45,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
-    fontWeight: 600,
+    fontWeight: "600",
+    color: '#1c1c1c'
   },
   content: {
     fontSize: 18,
     lineHeight: 28,
+    color: '#1c1c1c'
   },
 });
 

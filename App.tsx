@@ -78,15 +78,17 @@ const styles = StyleSheet.create({
     fontSize: 48,
     fontWeight: '600',
     marginBottom: 5,
+    color: '#1c1c1c'
   },
   subHeadline: {
     fontSize: 28,
     fontWeight: '300',
+    color: '#1c1c1c'
   },
   bannerStyle: {backgroundColor: '#F7F7F7'},
   viewContainerStyle: {shadowColor: 'white'},
   poemLink: {
-    fontSize: 18,
+    paddingLeft: 10,
     paddingTop: 10,
     paddingBottom: 10,
   },
