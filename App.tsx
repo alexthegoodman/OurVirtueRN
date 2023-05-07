@@ -26,7 +26,7 @@ function App({componentId = ''}): JSX.Element {
       <StatusBar backgroundColor={"white"} barStyle={'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={{padding: 25, marginBottom: 25}}>
+        style={{backgroundColor: "white", padding: 25, marginBottom: 25}}>
         <View style={{marginBottom: 25}}>
           <Image
             source={require('./assets/our-virtue.png')}

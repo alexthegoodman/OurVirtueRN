@@ -20,7 +20,7 @@ function Poem({componentId = '', title = '', path = ''}): JSX.Element {
       <StatusBar barStyle={'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={{padding: 25, marginBottom: 25}}>
+        style={{backgroundColor: "white", padding: 25, marginBottom: 25}}>
         <Link
           componentId={componentId}
           pop={true}
