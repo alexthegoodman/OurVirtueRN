@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Our Virtue</string>
+    <string name="facebook_app_id">1994562264047366</string>
+    <string name="facebook_client_token">2c853b0dafd94c96a02dc7e3b646ff87</string>
 </resources>

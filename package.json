@@ -13,6 +13,7 @@
     "react": "18.2.0",
     "react-native": "0.71.6",
     "react-native-bootsplash": "^4.6.0",
+    "react-native-fbsdk-next": "^11.2.1",
     "react-native-navigation": "^7.32.1",
     "react-native-simple-accordion": "^1.17.0"
   },
